@@ -95,7 +95,8 @@
           I am a research scholar at <a href="https://www.ucsd.edu/">University of California, San Diego</a>, where I work on deep learning, sensor fusion, and mobile computing, etc. Before that, I did my PhD at school of Computer Science, <a href="https://www.csu.edu.cn/">Central South University</a>. I did my bachelors at school of Information Science and Technology, <a href="https://en.csu.edu.cn/">Central South University</a>.
         </p>
         <p class="w3-center">
-          <a href="mailto:jgong100@163.com">Email</a> &nbsp/&nbsp
+          <a href="mailto:jgong100@163.com">Email</a> 
+<!--           &nbsp/&nbsp -->
 <!--           <a href="https://scholar.google.com/citations?user=isizOkYAAAAJ">Google Scholar</a> &nbsp/&nbsp -->
 <!--           <a href="https://www.zhihu.com/people/YunheWang"> Zhi Hu </a> &nbsp/&nbsp -->
 <!--           <a href="https://dblp.org/pid/63/8217-1.html"> DBLP </a> -->
@@ -108,25 +109,39 @@
   <div class="w3-container w3-padding-32" id="projects">
     <h2>Recent Projects</h2>
     <p class="w3-justify">
-        Actually, model compression is a kind of technique for developing portable deep neural networks with lower memory and computation costs. I have done several projects in Huawei including some smartphones' applications in 2019 and 2020 (e.g. Mate 30 and Honor V30). Currently, I am leading the AdderNet project, which aims to develop a series of deep learning models using only additions (<a href="https://www.reddit.com/r/MachineLearning/comments/ekw2s1/r_addernet_do_we_really_need_multiplications_in/">Discussions on Reddit</a>).
+        Actually, model compression is a kind of technique for developing portable deep neural networks with lower memory and computation costs. I have done several projects in Huawei including some smartphones' applications in 2019 and 2020 (e.g. Mate 30 and Honor V30). Currently, I am leading the 
+      Net project, which aims to develop a series of deep learning models using only additions (<a href="https://www.reddit.com/r/MachineLearning/comments/ekw2s1/r_addernet_do_we_really_need_multiplications_in/">Discussions on Reddit</a>).
     </p>
 
-        <h4><li>Adder Neural Networks</li></h4>
+        <h4><li>[Ubicomp'21]Robust Inertial Motion Tracking through Deep Sensor Fusion across Smart Earbuds and Smartphone</li></h4>
         <img style="width:96%;" src="images/AdderNet.jpg"> 
         <p class="w3-justify">
-        <a style="color: #447ec9" href="https://github.com/huawei-noah/AdderNet">Project Page</a> | <a style="color: #447ec9" href="https://arxiv.org/pdf/2101.10015.pdf">Hardware Implementation</a>
+        <a style="color: #447ec9" href="https://github.com/jamesdeep/DeepIT">Project Page</a>
         </p>
         <p class="w3-justify">
-        I would like to say, <span style="color:red">AdderNet is very cool!</span> The initial idea was came up in about 2017 when climbing with some friends at Beijing. By replacing all convolutional layers (except the first and the last layers), we now can obtain comparable performance on ResNet architectures. In addition, to make the story more complete, we recent release the hardware implementation and some quantization methods. The results are quite encouraging, we can reduce both <strong>the energy consumption and thecircuit areas significantly without affecting the performance</strong>. Now, we are working on more applications to reduce the costs of launching AI algorithms such as low-level vision, detection, and NLP tasks.
+        IMU based inertial tracking plays an indispensable role in many mobility centric tasks, such as robotic control, indoor navigation and virtual reality gaming. 
+Despite its mature application in rigid machine mobility (\eg, robot and aircraft), tracking human users via mobile devices remains a fundamental challenge due to the intractable gait/posture patterns. 
+Recent data-driven models have tackled sensor drifting, one key issue that plagues inertial tracking. 
+However, these systems still assume the devices are held or attached to the user body with a relatively fixed posture. In practice, natural body activities may rotate/translate the device which may be mistaken as whole body movement. Such motion artifacts remain as the dominating factor that fails existing inertial tracing systems in practical uncontrolled settings. 
+
+Inspired by the observation that human heads induces far less intensive movement relative to the body during walking, compared to other parts, we propose a novel multi-stage sensor fusion pipeline called DeepIT, which realizes inertial tracking by synthesizing the IMU measurements from a smartphone and an associated earbud. 
+DeepIT introduces a data-driven reliability aware attention model, which assesses the reliability of each IMU and opportunistically synthesizes their data to mitigate the impacts of motion noise.
+Furthermore, DeepIT uses a reliability aware magnetometer compensation scheme to combat the angular drifting problem caused by unrestricted motion artifacts. 
+We validate DeepIT on the first large-scale inertial navigation dataset involving both smartphone and earbud IMUs. The evaluation results show that DeepIT achieves multiple folds of accuracy improvement on the challenging uncontrolled natural walking scenarios, compared with state-of-the-art closed-form and data-driven models.
         </p> 
 
-        <h4><li>GhostNet on MindSpore: SOTA Lightweight CV Networks</li></h4>
+        <h4><li>[Ubicomp'21]RF Vital Sign Sensing Under Free Body Movement</li></h4>
         <img style="width:96%;" src="images/GhostNet.png"> 
         <p class="w3-justify">
-        <a style="color: #447ec9" href="https://live.huawei.com/huaweiconnect/meeting/cn/5872.html">Huawei Connect (HC) 2020</a> | <a style="color: #447ec9" href="https://www.mindspore.cn/resources/hub">MindSpore Hub</a>
+        <a style="color: #447ec9" href="https://live.huawei.com/huaweiconnect/meeting/cn/5872.html">Project page</a>
         </p>
         <p class="w3-justify">
-        The initial verison of GhostNet was accepted by CVPR 2020, which achieved SOTA performance on ImageNet: <span style="color:red">75.7%</span> top1 acc with only <span style="color:red">226M FLOPS</span>. In the current version, we release a series computer vision models (e.g. int8 quantization, detection, and larger networks) on <strong>MindsSpore 1.0</strong> and <strong>Mate 30 Pro (Kirin 990)</strong>.
+        Radio frequency (RF) sensors such as radar are instrumental for continuous, contactless sensing of vital signs, especially heart rate (HR) and respiration rate (RR).  However, decades of related research mainly focused on static subjects, because the motion artifacts from other body parts may easily overwhelm the weak reflections from vital signs. This paper marks a first step in enabling RF vital sign sensing under ambulant daily living conditions. 
+Our solution is inspired by existing physiological research that revealed the correlation between vital signs and body movement. 
+Specifically, we propose to combine direct RF sensing for static instances and indirect vital sign prediction based on movement power estimation. We design customized machine learning models to capture the sophisticated correlation between RF signal pattern, movement power, and vital signs.  
+We further design an instant calibration and adaptive training scheme to enable cross-subjects generalization, without any explicit data labeling from unknown subjects. 
+We prototype and evaluate the framework using a commodity radar sensor. 
+Under a variety of moving conditions, our solution demonstrates an average estimation error of 5.57 bpm for HR and 3.32 bpm for RR across multiple subjects, which largely outperforms state-of-the-art systems. 
         </p> 
 
         <h4><li>AI on Ascend: Real-Time Video Style Transfer</li></h4>
